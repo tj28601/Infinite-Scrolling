@@ -14,6 +14,8 @@ npm install
 
 Navigate to http://localhost:3000.
 
+You can also view a demo of this exercise on heroku @ https://incrowd.herokuapp.com/.
+
 # Test Suite
 ```
 npm test
