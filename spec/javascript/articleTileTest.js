@@ -2,7 +2,7 @@ import ArticleTile from '../../app/javascript/react/components/ArticleTile';
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
-
+ 
 
 Object.assign(global, {
  jasmineEnzyme,
