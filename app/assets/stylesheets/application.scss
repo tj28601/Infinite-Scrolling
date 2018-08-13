@@ -15,3 +15,17 @@
  *= require foundation_and_overrides
 
  */
+.articles li {
+  border: 5.5px solid black;
+  margin: 5px 5px 5px 10px;
+  padding: 5px;
+  width: 65%;
+}
+
+h2 {
+  margin-left: 40px;
+}
+
+nav {
+  padding-left: 35px;
+}
