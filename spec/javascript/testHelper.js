@@ -1,6 +1,7 @@
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
+import fetch from 'isomorphic-fetch';
 import 'jasmine-ajax';
 
 Object.assign(global, {
@@ -8,6 +9,7 @@ Object.assign(global, {
   mount,
   React,
   shallow,
+  fetch
 });
 
 beforeEach(() => {
