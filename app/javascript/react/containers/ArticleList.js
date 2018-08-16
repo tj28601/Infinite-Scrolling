@@ -15,11 +15,13 @@ class ArticleList extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.loadArticles()
-    this.scrollListener = window.addEventListener('scroll', (e) => {
-      this.handleScroll(e)
-    })
+    // window.addEventListener('scroll', (e) => {
+    //   this.handleScroll(e)
+    // })
+    window.addEventListener('scroll', this.handleScroll)
+      // window.addEventListener('scroll', this.handleScroll(e))
   }
 
   handleScroll = (e) => {
