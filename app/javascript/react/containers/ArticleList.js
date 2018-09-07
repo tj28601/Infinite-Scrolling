@@ -58,7 +58,6 @@ class ArticleList extends Component {
       })
   }
 
-
   loadMore = () => {
     this.setState(prevState => ({
       offset: prevState.offset + 10,
