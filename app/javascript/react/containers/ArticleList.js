@@ -17,11 +17,7 @@ class ArticleList extends Component {
 
   componentDidMount() {
     this.loadArticles()
-    // window.addEventListener('scroll', (e) => {
-    //   this.handleScroll(e)
-    // })
     window.addEventListener('scroll', this.handleScroll)
-      // window.addEventListener('scroll', this.handleScroll(e))
   }
 
   handleScroll = (e) => {
