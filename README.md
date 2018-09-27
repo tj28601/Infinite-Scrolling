@@ -1,4 +1,4 @@
-# InCrowd Exercise Overview
+# Infinite Scrolling Exercise Overview
 * Rails v 5.1.6
 * "@rails/webpacker": "3.5"
 * "babel-preset-react": "^6.24.1"
@@ -14,7 +14,7 @@ npm install
 
 Navigate to http://localhost:3000.
 
-You can also view a demo of this exercise on heroku @ https://incrowd.herokuapp.com/.
+You can also view a demo of this exercise on heroku @ https://infscrolling.herokuapp.com/.
 
 # Test Suite
 ```
