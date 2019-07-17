@@ -65,7 +65,7 @@ class ArticleList extends Component {
       <div>
         <ol className="articles">
           {this.state.articles.map((article, i) => {
-             return <li key={ i }>
+            return <li key={ i }>
               <ArticleTile
                 title={ article.title }
                 published={ article.published }
