@@ -16,24 +16,23 @@ class ArticleList extends Component {
   }
 
   componentDidMount() {
-    this.loadArticles()
-    window.addEventListener('scroll', this.handleScroll)
+    this.loadArticles();
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   handleScroll = (e) => {
-    const { scrolling, totalArticles, offset } = this.state
-    if (scrolling) return
-    // if (totalArticles <= offset) return
-    const lastLi = document.querySelector('ol.articles > li:last-child')
-    const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
-    const pageOffset = window.pageYOffset + window.innerHeight
+    const { scrolling, totalArticles, offset } = this.state;
+    if (scrolling) return;
+    const lastLi = document.querySelector('ol.articles > li:last-child');
+    const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight;
+    const pageOffset = window.pageYOffset + window.innerHeight;
     var bottomOffset = 20;
-    if (pageOffset > lastLiOffset - bottomOffset) this.loadMore()
+    if (pageOffset > lastLiOffset - bottomOffset) this.loadMore();
   }
 
-  loadArticles =() => {
-    const { limit, offset, articles } = this.state
-    const url = `https://www.stellarbiotechnologies.com/media/press-releases/json?limit=${limit}&offset=${offset}`
+  loadArticles() {
+    const { limit, offset, articles } = this.state;
+    const url = `https://www.stellarbiotechnologies.com/media/press-releases/json?limit=${limit}&offset=${offset}`;
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -54,31 +53,28 @@ class ArticleList extends Component {
       })
   }
 
-  loadMore = () => {
+  loadMore() {
     this.setState(prevState => ({
       offset: prevState.offset + 10,
       scrolling: true,
-    }), this.loadArticles)
-    console.log(this.state.limit)
-    console.log(this.state.offset)
-    console.log(this.state.totalArticles)
-    console.log(this.state.scrolling)
+    }), this.loadArticles() )
   }
 
   render() {
-    return <div>
-    <ol className="articles">
-    {
-      this.state.articles.map(article => <li key={article.id}>
-      <ArticleTile
-        title={ article.title }
-        published={ article.published }
-       />
-    </li>)
-    }
-    </ol>
-
-    </div>
+    return (
+      <div>
+        <ol className="articles">
+          {this.state.articles.map((article, i) => {
+             return <li key={ i }>
+              <ArticleTile
+                title={ article.title }
+                published={ article.published }
+              />
+            </li>
+          })}
+        </ol>
+      </div>
+    )
   }
 }
 
