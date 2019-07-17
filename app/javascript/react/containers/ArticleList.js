@@ -57,7 +57,7 @@ class ArticleList extends Component {
     this.setState(prevState => ({
       offset: prevState.offset + 10,
       scrolling: true,
-    }), this.loadArticles() )
+    }), this.loadArticles())
   }
 
   render() {
@@ -65,12 +65,14 @@ class ArticleList extends Component {
       <div>
         <ol className="articles">
           {this.state.articles.map((article, i) => {
-            return <li key={ i }>
-              <ArticleTile
-                title={ article.title }
-                published={ article.published }
-              />
-            </li>
+            return (
+              <li key={ i }>
+                <ArticleTile
+                  title={ article.title }
+                  published={ article.published }
+                />
+              </li>
+            )
           })}
         </ol>
       </div>
